@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div class="campo">
-      <img src="https://ricksonwill.github.io/calcular-seculo/img/logo-calculadora-seculo.fb84956b.svg" alt="Calculadora Seculo">
+      <img src="../assets/logo-calc-seculo.png" alt="Calculadora Seculo">
       <br><input type="number" @input="atualizarValor" :value="anoE" placeholder="Ex: 2020">
       <div class="resultado" v-if="this.anoE == ''">
         Insira um Ano
