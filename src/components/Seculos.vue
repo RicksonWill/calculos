@@ -1,13 +1,13 @@
 <template>
   <div class="wrapper">
     <div class="campo">
-      <img src="../assets/logo-calc-seculo.png" alt="Calculadora Seculo">
+      <div class="logo">Calculadora de Século</div>
       <br><input type="number" @input="atualizarValor" :value="anoE" placeholder="Ex: 2020">
       <div class="resultado" v-if="this.anoE == ''">
         Insira um Ano
       </div> 
       <div class="resultado" v-else>
-        Século {{ seculo(this.anoE) }} {{ this.c }}. C.
+        Século {{ seculo(this.anoE) }} 
       </div> 
     </div>
     <div class="autor">
@@ -22,15 +22,18 @@ export default {
   data(){
     return {
       anoE: "",
-      c: "d"
     }
   },
   methods:{
     seculo(anoE){
       var ano = anoE
       var seculo = "1"
+      var periodo = ""
+      var antesDeCristo = " a. C"
+      var depoisDeCristo = " d. C."
       if((parseInt(ano) < 100) && (parseInt(ano) >= 0) || ((parseInt(ano)<0) && (parseInt(ano) > -100) )){
-        return seculo
+        periodo = ano < 0 ? antesDeCristo:depoisDeCristo 
+        return seculo + periodo
       }
       var ni = ano.substring(0,(ano.length -2))
       var nf = ano.substr(ano.length - 2)
@@ -44,12 +47,12 @@ export default {
         seculo = ni
       }
       if(seculo > 0){
-        this.c = "d"
-        return seculo
+        periodo = depoisDeCristo
+        return seculo + periodo
       }else{
         seculo = seculo *  -1
-        this.c = "d"
-        return seculo
+        periodo = antesDeCristo
+        return seculo + periodo
       }
     },
     atualizarValor(event){
@@ -64,6 +67,10 @@ export default {
   flex-direction: column;
   height: 450px;
 }
+.logo{
+  font-size: 60px;
+  color: #fff;
+}
 .campo{
   margin: auto 0;
 }
@@ -72,7 +79,7 @@ input{
   color: #848484;
   width: 80%;
   max-width: 700px;
-  height: 40px;
+  height: 60px;
   text-align: center;
   border-radius: 30px;
   font-size: 25px;
@@ -85,8 +92,8 @@ input{
 .autor{
   color: #fff;
   position: fixed;
-  bottom: 10px;
-  right: 10px;
+  bottom: 30px;
+  right: 60px;
   font-size: 30px;
 }
 </style>
