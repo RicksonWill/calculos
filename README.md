@@ -1,6 +1,6 @@
 # calculo (de ano para seculo / somatória de N numeros primos)
 projeto feito por Rickson William
-[Link do projeto](https://ricksonwill.github.io/calculos/)
+[ Link de Demostração ](https://ricksonwill.github.io/calculos/)
 ## Funções Principais
 
 1. Para retorna o seculo e diz se ele e **Antes** ou **Depois** de **Cristo**:
