@@ -6,12 +6,12 @@ projeto feito por Rickson William
 1. Para retorna o seculo e diz se ele e **Antes** ou **Depois** de **Cristo**:
 ```
 seculo(anoEntrada){
-      var ano = anoEntrada
+      var ano = parseInt(anoEntrada)
       var seculo = "1"
       var periodo = ""
       var antesDeCristo = " a. C"
       var depoisDeCristo = " d. C."
-      if((parseInt(ano) < 100) && (parseInt(ano) >= 0) || ((parseInt(ano)<0) && (parseInt(ano) > -100) )){
+      if((ano < 100) && (ano >= 0) || ((ano<0) && (ano > -100) )){
         periodo = ano < 0 ? antesDeCristo:depoisDeCristo 
         return seculo + periodo
       }
