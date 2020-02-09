@@ -92,7 +92,7 @@ input{
 .autor{
   color: #fff;
   position: fixed;
-  bottom: 30px;
+  bottom: 25px;
   right: 60px;
   font-size: 30px;
 }

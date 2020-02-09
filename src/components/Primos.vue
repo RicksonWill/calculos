@@ -6,8 +6,12 @@
       <div class="descricao" v-if="this.vE == ''">
         Insira um numero
       </div> 
+      <div class="descricao" v-else-if="parseInt(this.vE) <= 0 ">
+        Insira um numero maior que 0 (Zero)
+      </div> 
       <div class="descricao" v-else>
-        Soma dos {{ this.vE }} primeiros números primos <br>
+        <div v-if="this.vE == '1'">Soma do {{ this.vE }} primeiro número primo <br></div>
+        <div v-else>Soma dos {{ this.vE }} primeiros números primos <br></div>
       </div> 
       <div class="resultado" >
         {{ soma(vE) }}
@@ -102,7 +106,7 @@ input{
 .autor{
   color: #fff;
   position: fixed;
-  bottom: 30px;
+  bottom: 25px;
   right: 60px;
   font-size: 30px;
 }
